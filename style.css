@@ -1,0 +1,108 @@
+:root {
+    --primary: #2c3e50;
+    --accent: #e67e22; /* Une couleur terre de sienne / brique pour le côté "voyou/élégant" */
+    --light: #f9f9f9;
+    --dark: #1a1a1a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: white;
+}
+
+h1, h2, h3, .quote {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-content h1 { font-size: 4rem; margin-bottom: 0.5rem; }
+.hero-content h2 { font-size: 1.5rem; font-weight: 300; font-style: italic; margin-bottom: 2rem; }
+
+.badge {
+    background: var(--accent);
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 15px 35px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.btn-main:hover { background: white; color: var(--dark); }
+
+/* Layout Content */
+.container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+
+.book-presentation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.book-img img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.quote {
+    margin-top: 30px;
+    font-size: 1.4rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 20px;
+    font-style: italic;
+    color: var(--primary);
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    background: var(--light);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.specs ul { list-style: none; margin-top: 15px; }
+.specs li { margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+
+footer { text-align: center; padding: 40px; color: #888; font-size: 0.9rem; }
+
+/* Animations */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+    .book-presentation, .details { grid-template-columns: 1fr; }
+    .hero-content h1 { font-size: 2.5rem; }
+}
